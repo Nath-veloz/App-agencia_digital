@@ -1,0 +1,12 @@
+{
+  "name": "app-agencia_digital",
+  "version": "1.0.0",
+  "description": "um sistema com intuito de facilitar a gestão e criação de agencias digitais, condensando ferramentas, automações e conteúdo relevante em um único local",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
