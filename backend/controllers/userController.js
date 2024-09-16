@@ -1,6 +1,8 @@
 const db = require('../config/db'); // Conexão ao banco de dados
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const User = require('../models/User');
+const { secretKey } = require('../config/env');
 
 // Função de Registro de Usuário
 exports.register = async (req, res) => {

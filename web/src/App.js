@@ -1,4 +1,45 @@
-const express = require('express');
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import RegisterPage from './pages/RegisterPage';
+import LoginPage from './pages/LoginPage';
+import ActivityPage from './pages/ActivityPage'; // Já existente
+import ActivityLog from './components/ActivityLog';
+import HomePage from './pages/HomePage'; // Página principal
+
+// Componente para rotas protegidas
+const PrivateRoute = ({ component: Component, ...rest }) => {
+    const isAuthenticated = !!localStorage.getItem('token');
+    return (
+        <Route
+            {...rest}
+            render={props =>
+                isAuthenticated ? (
+                    <Component {...props} />
+                ) : (
+                    <Redirect to="/login" />
+                )
+            }
+        />
+    );
+};
+
+function App() {
+    return (
+        <Router>
+            <Switch>
+                <Route exact path="/" component={HomePage} />
+                <Route path="/register" component={RegisterPage} />
+                <Route path="/login" component={LoginPage} />
+                <PrivateRoute path="/activity" component={ActivityPage} />
+                {/* Adicione outras rotas protegidas aqui */}
+            </Switch>
+        </Router>
+    );
+}
+
+export default App;
+
+/*const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 const userRoutes = require('../../backend/routes/userRoutes');
@@ -20,30 +61,4 @@ app.use('/api/activity', authMiddleware, activityRoutes);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
-});
-
-/*import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;*/
+});*/
