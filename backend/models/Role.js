@@ -8,7 +8,7 @@ const Role = db.define('Role', {
     unique: true
   },
   permissions: {
-    type: DataTypes.JSON, // Permissões como JSON para guardar as permissões de forma flexível
+    type: DataTypes.ARRAY(DataTypes.STRING),
     allowNull: false
   }
 }, {
