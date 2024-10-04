@@ -17,5 +17,8 @@
     "mysql2": "^3.11.3",
     "node": "^22.9.0",
     "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
