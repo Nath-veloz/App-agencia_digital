@@ -3,7 +3,7 @@ const cors = require('cors');
 const db = require('./db'); // Assumindo que a conexão com o banco está no arquivo db.js
 
 const app = express();
-const PORT =3000;
+const PORT =3002;
 
 // Middleware
 app.use(cors());
