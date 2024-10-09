@@ -1,9 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const db = require('./db'); // Assumindo que a conexão com o banco está no arquivo db.js
 
 const app = express();
-const PORT =3002;
+const PORT = process.env.PORT || 3002;
 
 // Middleware
 app.use(cors());
