@@ -27,21 +27,3 @@ async function testConnection() {
 testConnection(); // Chama a função de teste de conexão
 
 module.exports = sequelize;
-
-
-/*
-require('dotenv').config();
-const { Sequelize } = require('sequelize');
-
-const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
-  {
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT, // Verificar se a porta está sendo usada corretamente
-    dialect: 'mysql',
-  }
-);
-
-module.exports = sequelize;*/
